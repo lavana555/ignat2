@@ -7,6 +7,7 @@ import WithRouterNewPassContainer from "./NewPass/NewPassContainer";
 import Loginization from "./Login/Loginization";
 import Users from "./Users/Users";
 import Time from "./Time/Time";
+import Modal from "./Modal/Modal";
 
 
 class App extends React.Component {
@@ -56,6 +57,7 @@ class App extends React.Component {
 
                     {/*<Route exact path='/SignIN' component={SignIN}/>*/}
 <Users />
+                   < Modal/>
                     {/*<Registration/>*/}
                     {/*<RecoveryPassContainer/>*/}
                 </div>
