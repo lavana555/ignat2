@@ -6,6 +6,7 @@ import {BrowserRouter, Link, Route} from "react-router-dom";
 import WithRouterNewPassContainer from "./NewPass/NewPassContainer";
 import Loginization from "./Login/Loginization";
 import Users from "./Users/Users";
+import Color from './Color/Color';
 
 
 class App extends React.Component {
@@ -50,6 +51,7 @@ class App extends React.Component {
                         <Route exact path='/forgot/' component={WithRouterRecoveryPassContainer}/>
                         <Route exact path='/reset-password/:token' component={WithRouterNewPassContainer}/>
                         <Route exact path='/login/' component={Loginization}/>
+                        <Route exact path='/color/' component={Color}/>
                     </div>
 
                     {/*<Route exact path='/SignIN' component={SignIN}/>*/}
