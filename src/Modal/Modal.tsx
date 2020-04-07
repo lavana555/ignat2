@@ -41,14 +41,14 @@ class Modal extends React.Component<propsType> {
 
 
     render() {
-        let forSimple = this.props.modal === "simple" ? "module-active" : false;
-        let forQuestion = this.props.modal === "question" ? "module-active" : false;
-        let forInput = this.props.modal === "input" ? "module-active" : false;
+        let forSimple = this.props.modal === "simple";
+        let forQuestion = this.props.modal === "question";
+        let forInput = this.props.modal === "input";
 
 
         let forMessage = this.props.modal === "message" ? "module-active" : "";
-        let forSuccess = this.props.modal === "success" ? "module-active" : "";
-        let forError = this.props.modal === "error" ? "module-active" : "";
+        let forSuccess = this.props.modal === "success";
+        let forError = this.props.modal === "error";
         return (
             <div className={s.modal}>
                 {!this.props.isModal ?
