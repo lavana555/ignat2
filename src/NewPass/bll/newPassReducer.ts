@@ -2,11 +2,11 @@ import {Dispatch} from "redux";
 import {apiNewPass} from "../dal/apiNewPass";
 import {errorAlertSuccess, loadAC, successAC} from "../../booleanReducer/booleanReducer";
 
-const RESET_PASSWORD = "app/newPassReducer/RESET_PASSWORD"
-const ERROR_ALERT = "app/newPassReducer/ERROR_ALERT"
-const DELETE_ERROR = "app/newPassReducer/DELETE_ERROR"
-const LOADING_STATUS = "app/newPassReducer/LOADING_STATUS"
-const DISABLE_STATUS = "app/newPassReducer/DISABLE_STATUS"
+const RESET_PASSWORD = "app/timeReducer/RESET_PASSWORD"
+const ERROR_ALERT = "app/timeReducer/ERROR_ALERT"
+const DELETE_ERROR = "app/timeReducer/DELETE_ERROR"
+const LOADING_STATUS = "app/timeReducer/LOADING_STATUS"
+const DISABLE_STATUS = "app/timeReducer/DISABLE_STATUS"
 
 const initialState = {
     // success: false,

@@ -6,7 +6,7 @@ import {BrowserRouter, Link, Route} from "react-router-dom";
 import WithRouterNewPassContainer from "./NewPass/NewPassContainer";
 import Loginization from "./Login/Loginization";
 import Users from "./Users/Users";
-import AuthMe from "./Login/AuthMe";
+import Time from "./Time/Time";
 
 
 class App extends React.Component {
@@ -51,7 +51,7 @@ class App extends React.Component {
                         <Route exact path='/forgot/' component={WithRouterRecoveryPassContainer}/>
                         <Route exact path='/reset-password/:token' component={WithRouterNewPassContainer}/>
                         <Route exact path='/login/' component={Loginization}/>
-                        <Route exact path='/authme/' component={AuthMe}/>
+                        <Route exact path='/time/' component={Time}/>
                     </div>
 
                     {/*<Route exact path='/SignIN' component={SignIN}/>*/}
