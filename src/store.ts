@@ -5,6 +5,7 @@ import {recPassReducer} from "./RecoveryPass/bll/recPassReducer";
 import {newPassReducer} from "./NewPass/bll/newPassReducer";
 import logInReducer from "./Login/login-reducer";
 import {UserReducer} from "./Users/UsersReducers";
+import {booleanReducer} from "./booleanReducer/booleanReducer";
 
 const rootReducer = combineReducers({
     logIn: logInReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     recPass: recPassReducer,
     newPass: newPassReducer,
     US:UserReducer,
+    BL:booleanReducer,
     // profile:profileReducer
 })
 

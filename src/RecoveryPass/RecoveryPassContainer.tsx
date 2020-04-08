@@ -4,6 +4,7 @@ import {deleteErrorMessage, sendMail} from "./bll/recPassReducer";
 import {connect} from "react-redux";
 import {withRouter, RouteComponentProps} from "react-router";
 import {AppStateType} from "../store";
+import {errorMessage, loadingStatus, statusSuccess} from "../booleanReducer/selector";
 
 type MapStateType = {
     success: boolean
@@ -33,10 +34,15 @@ class RecoveryPassContainer extends Component<PropsType> {
 }
 
 const mstp = (state: AppStateType): MapStateType => ({
-    success: state.recPass.success,
-    error: state.recPass.error,
-    loading:state.recPass.loading,
-    disable:state.recPass.disable
+    // success: state.recPass.success,
+    // error: state.recPass.error,
+    // loading:state.recPass.loading,
+    disable:state.recPass.disable,
+
+
+    loading:loadingStatus(state.BL.booleans),
+    error:errorMessage(state.BL.booleans),
+    success:statusSuccess(state.BL.booleans)
 })
 
 

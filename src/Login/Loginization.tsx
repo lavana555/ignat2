@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {loginTC} from "./login-reducer";
 import s from "./Loginization.module.css"
+import {errorMessage, loadingStatus, statusSuccess} from "../booleanReducer/selector";
+import {Redirect} from "react-router";
 
 
 type MapStateType = {
-    email: string,
-    password: string,
-    rememberMe: boolean
+    error: string;
+    loading: boolean,
+    success:boolean,
+    name:string
 }
 type MapDispatchType = {
     loginTC: (email: string, password: string, rememberMe: boolean) => void
@@ -43,6 +46,9 @@ class Loginization extends Component<PropsType> {
 
 
     render() {
+
+        if (this.props.success)return <Redirect to={'/authme'}/>
+
         return <div className={s.login}>
 
             <h1>Login</h1>
@@ -60,15 +66,22 @@ class Loginization extends Component<PropsType> {
             <input type='checkbox' checked={this.state.rememberMe}
                    onChange={this.rememberMe}/><span>Запомнить меня</span>
             <button onClick={this.addLogin}>Войти</button>
+            {this.props.loading ? <div style={{color: "red"}}>Loading...</div> : null}
+            {this.props.error!==''?<div style={{color: "red"}}>{this.props.error}</div> : null}
+            <div>{this.props.name}</div>
         </div>
     }
 };
 
 
 const mstp = (state: any): MapStateType => ({
-    email: state.logIn.email,
-    password: state.logIn.password,
-    rememberMe: state.logIn.rememberMe
+    // email: state.logIn.email,
+    // password: state.logIn.password,
+    // rememberMe: state.logIn.rememberMe,
+    loading:loadingStatus(state.BL.booleans),
+    error:errorMessage(state.BL.booleans),
+    success:statusSuccess(state.BL.booleans),
+    name:state.logIn.name
 
 });
 export default connect(mstp, {loginTC})(Loginization)
