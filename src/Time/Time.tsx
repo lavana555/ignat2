@@ -2,6 +2,7 @@ import React, {ChangeEvent, FC, useState} from 'react';
 import moment from "moment"
 import TimePicker from "rc-time-picker";
 import 'rc-time-picker/assets/index.css';
+import Timetracker from "./TimeTracker/timetracker";
 
 
 type PropsType = {}
@@ -23,10 +24,17 @@ const Time: FC<PropsType> = (props) => {
             </div>
             <input type={'time'} onChange={showInputValue}/>
             <div>
+
+
+
                 <TimePicker defaultValue={input1Value} format={"HH:mm"} showSecond={false} onChange={setInput1Value}/>---
+
                 <TimePicker defaultValue={input2Value} format={"HH:mm"} showSecond={false} onChange={setInput2Value}/>===
+
                 <TimePicker value={newTime} format={"HH:mm"} showSecond={false} showMinute={false} showHour={false}/>
+
             </div>
+            <Timetracker />
         </div>
     );
 }
