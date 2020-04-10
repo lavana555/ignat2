@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './Modal.module.css';
 import ModalChild from "./ModalChild";
 import {connect} from "react-redux";
@@ -6,6 +6,7 @@ import {modalDisplayAC, changeModalSuccess} from "./ModalReducer";
 import QuestionModal from "./questionModal";
 import InputModal from "./inputModal";
 import MessageModal from "./MessageModal";
+import UpPage from "./UpPage";
 
 type mstpType = {
     isModal: boolean,
@@ -16,6 +17,7 @@ type mdtpType = {
     changeModalSuccess: (modal: string) => void
 }
 type propsType = mstpType & mdtpType
+
 
 
 class Modal extends React.Component<propsType> {
@@ -85,6 +87,8 @@ class Modal extends React.Component<propsType> {
 
                     : ''
                 }
+
+                <UpPage/>
             </div>
         );
     }
