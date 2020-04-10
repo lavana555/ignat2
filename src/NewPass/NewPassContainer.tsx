@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {RouteComponentProps} from "react-router";
 import {withRouter} from "react-router-dom";
 import {AppStateType} from "../store";
+import {errorMessage, loadingStatus, statusSuccess} from "../booleanReducer/selector";
 
 type MatchParams = {
     token: string
@@ -38,10 +39,15 @@ class NewPassContainer extends Component<PropsType> {
 }
 
 const mstp = (state: AppStateType): MapStateType => ({
-    success: state.newPass.success,
-    error: state.newPass.error,
-    loading: state.newPass.loading,
-    disable: state.newPass.disable
+    // success: state.newPass.success,
+    // error: state.newPass.error,
+    // loading: state.newPass.loading,
+    disable: state.newPass.disable,
+
+
+    loading:loadingStatus(state.BL.booleans),
+    error:errorMessage(state.BL.booleans),
+    success:statusSuccess(state.BL.booleans)
 })
 
 

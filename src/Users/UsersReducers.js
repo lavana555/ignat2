@@ -63,7 +63,7 @@ export const getTodolistsTC=()=>(dispatch)=>{
     dispatch(loadAC(true))
     api.getUsersApi()
         .then(res=>{
-            debugger;
+      //      debugger;
             dispatch(loadAC(false))
             dispatch(getUsersAC(res.data.users))
         })

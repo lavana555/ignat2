@@ -3,12 +3,13 @@ import classes from './Registration.module.css'
 import {connect} from "react-redux";
 import {addUserTC} from "./regInReducer";
 import {Redirect} from "react-router";
+import {errorMessage, loadingStatus, statusSuccess} from "./booleanReducer/selector";
 
 
 
 type MapStateType={
+    error: string;
     loading: boolean,
-    error: string,
     success:boolean
 }
 
@@ -60,6 +61,10 @@ class Registration extends React.Component<PropsType, StateType> {
         })
     }
 
+//     DSAINBR=()=>{
+//
+// }
+
     addRegister = () => {
         let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         if (this.state.pas1 !== this.state.pas2) {
@@ -79,6 +84,8 @@ class Registration extends React.Component<PropsType, StateType> {
     }
 
     render = () => {
+//debugger
+
         if (this.props.success)return <Redirect to={'/login'}/>
 
         return (
@@ -103,10 +110,15 @@ class Registration extends React.Component<PropsType, StateType> {
 
 
 const mapStateToProps = (state:any) => {
+  // debugger
+    console.log(state)
     return {
-        loading: state.regIn.loading,
-        error:state.regIn.error,
-        success:state.regIn.success
+
+
+        loading:loadingStatus(state.BL.booleans),
+        error:errorMessage(state.BL.booleans),
+        success:statusSuccess(state.BL.booleans)
+
     }
 }
 
