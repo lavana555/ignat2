@@ -1,0 +1,86 @@
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150vh;
+}
+.buttonBox{
+    margin: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttonBox button{
+    margin: 6px;
+
+}
+.child {
+    background-color: rgba(0, 0, 0, 0.33);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    background-color: #45ed12;
+    height: 10em;
+    width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*For MESSAGE MODAL*/
+.movingContent{
+    background-color: #45ed12;
+    height: 4em;
+    width: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.movingContainer {
+   top: 5px;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    animation-name: slideDown;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    visibility: visible !important;
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(8%);
+    }
+}
+
+/**/
+.pageUp{
+   position: fixed;
+    top: 80vh;
+    left: 20px;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background: lime;
+    //z-index: 21;
+}
+.hidePageUp{
+    visibility: hidden;
+}

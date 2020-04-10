@@ -46,7 +46,7 @@ class App extends React.Component {
                             <li><Link to="login">sig-in</Link></li>
                             <li><Link to="registration">register</Link></li>
                             <li><Link to="forgot">forgot</Link></li>
-                            
+
                             <li><Link to="time">time</Link></li>
                             <li><Link to="color">color</Link></li>
                             <li><Link to="modal">modals</Link></li>
