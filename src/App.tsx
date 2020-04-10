@@ -11,6 +11,7 @@ import Time from "./Time/Time";
 import AuthMe from "./Login/AuthMe";
 
 import Color from './Color/Color';
+import Modal from "./Modal/Modal";
 
 
 
@@ -45,9 +46,10 @@ class App extends React.Component {
                             <li><Link to="login">sig-in</Link></li>
                             <li><Link to="registration">register</Link></li>
                             <li><Link to="forgot">forgot</Link></li>
-                            <li><Link to="modals">modals</Link></li>
+                            
                             <li><Link to="time">time</Link></li>
                             <li><Link to="color">color</Link></li>
+                            <li><Link to="modal">modals</Link></li>
                         </ul>
 
                       </>
@@ -61,6 +63,7 @@ class App extends React.Component {
                         <Route exact path='/authme/' component={AuthMe}/>
 
                         <Route exact path='/color/' component={Color}/>
+                        <Route exact path='/modal/' component={Modal}/>
 
                     </div>
 
